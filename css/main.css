@@ -1,17 +1,20 @@
 body{
+background-color: lightgray;
 font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 main{
   display: flex;
+  flex-wrap: wrap;
   padding: 10px;
 }
 #first-column{
   width: 60%;
+  min-width: 350px;
   box-sizing: border-box;
   background-color: white;
   border: 1px solid lightgray;
   border-radius: 5px;
-  margin-right: 10px;
+  margin-right: 40px;
   min-height: 20px;
   height: fit-content;
 }
@@ -28,7 +31,7 @@ main{
   padding-left: 20px;
   border: 1px solid lightgray;
 	height: 40px;
-	width: 420px;
+	width: 100%;
   margin: 10px;
   margin-right: 0px;
 }
@@ -47,14 +50,28 @@ main{
 }
 .row-products{
   display: flex;
+  justify-content: space-between;
+  position: relative;
+  min-height: 50px;
+  align-items: center;
+  padding: 5px 12px 5px 15px;
   border-top: 1px solid lightgray;
 }
+.row-item{
+  width: 33.33%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  min-width: max-content;
+}
 .product-item {
-
-	display: inline-block;
-	height: 25px;
-	padding: 5px;
-	border-radius: 5px;
+  width: 33.33%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  min-width: max-content;
 }
 
 .minus{
@@ -67,6 +84,7 @@ main{
 	height: 30px;
 	width: 30px;
 	text-align: center;
+  box-shadow: inset 0 -3px rgb(118, 50, 73);
 }
 .addition{
   color:#fff;
@@ -78,22 +96,43 @@ main{
 	height: 30px;
 	width: 30px;
 	text-align: center;
-  
-  
+  box-shadow: inset 0 -3px rgb(94, 124, 94);
 }
+.bought{
+  height: 25px;
+	width: 85px;
+  color: rgb(90, 90, 90);
+  border-radius: 5px;
+  background-color: rgb(231, 231, 231);
+  border: 1px solid lightgray;
+  box-shadow: inset 0 -3px gray;
+}
+.delete{
+  height: 25px;
+	width: 25px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: red;
+  border: 1px solid lightgray;
+  box-shadow: inset 0 -3px rgb(162, 18, 18);
+
+}
+
 .amount {
-  color:#fff;
-  font-weight: 1000;
-  background-color:rgb(190, 190, 190);
-	border-radius: 30px;
-	border: 0px;
-	display:inline-block;
-	height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
 	width: 30px;
-	text-align: center;
+  color:#fff;
+  background-color:rgb(190, 190, 190);
+	border-radius: 10px;
+  border: 0px;
+  margin: 3px;
 }
 #second-column{
-  width: 40%;
+  width: 30%;
+  min-width: 170px;
   box-sizing: border-box;
   background-color: white;
   border: 1px solid lightgray;
@@ -101,4 +140,100 @@ main{
   margin-right: 10px;
   min-height: 20px;
   height: fit-content;
+}
+#text-input{
+  width: 80px;
+  margin-left: 5px;
+}
+.product-item-2{
+  color: rgb(90, 90, 90);
+  font: sans-serif;
+  font-size: 12px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 5px;
+  margin-right: 0px;
+  background-color: lightgray;
+  border-radius: 5px;
+  width:fit-content;
+  height: 15px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+
+  
+}
+.amount-2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15px;
+	width: 15px;
+  color:#fff;
+  background-color:orange;
+	border-radius: 20px;
+  border: 0px;
+  margin: 3px;
+}
+.header{
+padding: 20px;
+font: sans-serif;
+font-size: large;
+font-weight: 600;
+
+
+}
+.badge {
+  position: absolute;
+  bottom: 0;
+  left: 80px;
+  width: 130px;
+  height: 60px;
+  padding: 10px;
+  transition: all 1s ease-out;
+  background-color: darkviolet;
+  color: white;
+  align-items: center;
+  display: block;
+  overflow: hidden;
+  border-radius: 25px 25px 0px 0px;
+}
+
+.badge:hover {
+  transition: all 1s ease-out;
+  height: 130px;
+  background-color: rgb(95, 75, 226);
+}
+@media print {
+  .badge {
+      background-color: white;
+      color: black;
+      border: 2px solid darkgray;
+      height: 50px;
+  }
+
+  .badge > p:first-of-type {
+      display: none;
+  }
+
+  .badge > span {
+      margin-left: 25px;
+  }
+}
+@media (max-width:620px){
+
+  main {
+      display: grid;
+  }
+
+  #first-column{
+      margin: 0 0 10px 0;
+      width: 100%;
+  }
+
+  #second-column{
+      width: 100%;
+  }
 }
